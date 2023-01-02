@@ -1,0 +1,74 @@
+<!-- interpolation example -->
+<h1>vishal Garg {{ title }}</h1>
+<!-- V can add class to the interpolated element-->
+<h1 class="class1">vishal Garg {{ title }}</h1>
+<!-- V can add id to the interpolated element-->
+<h1 id="id1">vishal Garg {{ title }}</h1>
+<!-- vishal component in app-->
+<h1><app-vishal></app-vishal></h1>
+<!-- login component in user-auth module -->
+<h1><app-login></app-login></h1>
+<!-- function calling -->
+<div class="btn">
+    <button (click)="getName1()">Click Me</button>
+  <span>-To call the Function</span>
+</div>
+<!-- function calling with passing argument -->
+<div class="btn">
+    <button (click)="getName2('V')">Click Me</button>
+    <span>-To call the Function having Argument</span>
+</div>
+<!-- function calling with passing multiple arguments -->
+<div class="btn">
+    <button (click)="getName3('vishal Garg','Vipul Sir')">Click Me</button>
+  <span>-To call the Function having Multiple Argument</span>
+</div>
+
+<!-- EVENTS IN ANGULAR  -->
+
+<!-- click event  -->
+<div class="btn">
+    <button (click)="getData()">Click Me</button>
+    <span>-To Check the Click Event by passing msg in Console</span>
+</div>
+<!-- keyup event  -->
+<div class="btn">
+    <input type="text" #box (keyup)="getInput(box.value)" placeholder="keyUp Event">
+    <span>-To Check the "keyup" event by passing msg in Console</span>
+</div>
+<!-- keydown event  -->
+<div class="btn">
+    <input type="text" #box1 (keydown)="getInput(box1.value)" placeholder="keydown Event">
+    <span>-To Check the "keydown" event by passing msg in Console</span>
+</div>
+<!-- blur event  -->
+<div class="btn">
+    <input type="text" #box2 (blur)="getInput(box2.value)" placeholder="blur Event">
+    <span>-To Check the "blur" event by passing msg in Console</span>
+</div>
+<!-- input event  -->
+<div class="btn">
+    <input type="text" #box3 (input)="getInput(box3.value)" placeholder="input Event">
+    <span>-To Check the "input" event by passing msg in Console</span>
+</div>
+<!-- mouseover event  -->
+<div class="btn">
+    <h3 (mouseover)="getInput('over')" >-To Check the "mouseover" event by passing msg in Console when we mouseover it !!!</h3>
+</div>
+<!-- mouseleave event  -->
+<div class="btn">
+    <h3 (mouseleave)="getInput('leave')" >-To Check the "mouseleave" event by passing msg in Console when we mouseover it !!!</h3>
+</div>
+<!-- making an input and showing its inputing value on the layout -->
+<div class="btn">
+    <h3 style="color:rgb(0, 0, 255);">---Making an input and showing its inputing value on the layout---</h3>
+    <input type="text" #box4 (input)="getInputReal(box4.value)" placeholder="Input Something">
+    <span>Input value is : {{displayValue}}</span>
+</div>
+<!-- making an input and showing its inputing value on the layout by clicking button -->
+<div class="btn">
+    <h3 style="color:rgb(0, 0, 255);">---Making an input and showing its inputing value on the layout by clicking button ---</h3>
+    <input type="text" #box5 placeholder="Input Something" name="username">
+    <button class="btn1" (click)="getInputReal1(box5.value)">Click Me</button>
+    <span>Input value is : {{displayValue2}}</span>
+</div>

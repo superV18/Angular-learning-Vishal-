@@ -1,0 +1,33 @@
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+html{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.btn button{
+    border: 3px solid black;
+    color: rgb(7, 7, 220);
+    background-color: rgb(241, 220, 220);
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.btn button:hover{
+    cursor: pointer;
+    background-color: rgb(185, 163, 163);
+    color: rgb(0, 0, 255);
+}
+.btn span{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.btn input {
+    padding: 9px;
+}
+.btn1{
+    margin-left: 9px;
+    position: relative;
+    top:4px;
+}
