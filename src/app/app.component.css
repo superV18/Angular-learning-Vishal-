@@ -1,33 +1,60 @@
-/* *{
-    padding: 0;
-    margin: 0;
-} */
-html{
-    overflow-y: hidden;
-    overflow-x: hidden;
+
+.btn button {
+  border: 3px solid black;
+  color: rgb(7, 7, 220);
+  background-color: rgb(241, 220, 220);
+  font-size: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 2px;
 }
-.btn button{
-    border: 3px solid black;
-    color: rgb(7, 7, 220);
-    background-color: rgb(241, 220, 220);
-    font-size: 25px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.btn button:hover {
+  cursor: pointer;
+  background-color: rgb(185, 163, 163);
+  color: rgb(0, 0, 255);
 }
-.btn button:hover{
-    cursor: pointer;
-    background-color: rgb(185, 163, 163);
-    color: rgb(0, 0, 255);
+.btn span {
+  margin-left: 10px;
+  font-size: 25px;
 }
-.btn span{
-    margin-left: 10px;
-    font-size: 25px;
+.btn input,
+.PbindingEx input {
+  padding: 9px;
 }
-.btn input {
-    padding: 9px;
+.btn1 {
+  margin-left: 9px;
+  position: relative;
+  top: 4px;
 }
-.btn1{
-    margin-left: 9px;
-    position: relative;
-    top:4px;
+.counterbox {
+  border: 1px solid black;
+  width: 25vw;
+  height: 5vh;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(90, 87, 168, 0.8309873265712535) 36%,
+    rgba(38, 218, 255, 1) 99%
+  );
+}
+.counterbox button {
+  margin: 1rem;
+  padding: 5px;
+}
+.counterbox button:hover {
+  color: aliceblue;
+  background: black;
+  cursor: pointer;
+}
+.nestedLoop{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
 }

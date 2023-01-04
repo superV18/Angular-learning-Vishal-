@@ -10,17 +10,17 @@
 <h1><app-login></app-login></h1>
 <!-- function calling -->
 <div class="btn">
-    <button (click)="getName1()">Click Me</button>
+  <button (click)="getName1()">Click Me</button>
   <span>-To call the Function</span>
 </div>
 <!-- function calling with passing argument -->
 <div class="btn">
-    <button (click)="getName2('V')">Click Me</button>
-    <span>-To call the Function having Argument</span>
+  <button (click)="getName2('V')">Click Me</button>
+  <span>-To call the Function having Argument</span>
 </div>
 <!-- function calling with passing multiple arguments -->
 <div class="btn">
-    <button (click)="getName3('vishal Garg','Vipul Sir')">Click Me</button>
+  <button (click)="getName3('vishal Garg', 'Vipul Sir')">Click Me</button>
   <span>-To call the Function having Multiple Argument</span>
 </div>
 
@@ -28,47 +28,175 @@
 
 <!-- click event  -->
 <div class="btn">
-    <button (click)="getData()">Click Me</button>
-    <span>-To Check the Click Event by passing msg in Console</span>
+  <button (click)="getData()">Click Me</button>
+  <span>-To Check the Click Event by passing msg in Console</span>
 </div>
 <!-- keyup event  -->
 <div class="btn">
-    <input type="text" #box (keyup)="getInput(box.value)" placeholder="keyUp Event">
-    <span>-To Check the "keyup" event by passing msg in Console</span>
+  <input
+    type="text"
+    #box
+    (keyup)="getInput(box.value)"
+    placeholder="keyUp Event"
+  />
+  <span>-To Check the "keyup" event by passing msg in Console</span>
 </div>
 <!-- keydown event  -->
 <div class="btn">
-    <input type="text" #box1 (keydown)="getInput(box1.value)" placeholder="keydown Event">
-    <span>-To Check the "keydown" event by passing msg in Console</span>
+  <input
+    type="text"
+    #box1
+    (keydown)="getInput(box1.value)"
+    placeholder="keydown Event"
+  />
+  <span>-To Check the "keydown" event by passing msg in Console</span>
 </div>
 <!-- blur event  -->
 <div class="btn">
-    <input type="text" #box2 (blur)="getInput(box2.value)" placeholder="blur Event">
-    <span>-To Check the "blur" event by passing msg in Console</span>
+  <input
+    type="text"
+    #box2
+    (blur)="getInput(box2.value)"
+    placeholder="blur Event"
+  />
+  <span>-To Check the "blur" event by passing msg in Console</span>
 </div>
 <!-- input event  -->
 <div class="btn">
-    <input type="text" #box3 (input)="getInput(box3.value)" placeholder="input Event">
-    <span>-To Check the "input" event by passing msg in Console</span>
+  <input
+    type="text"
+    #box3
+    (input)="getInput(box3.value)"
+    placeholder="input Event"
+  />
+  <span>-To Check the "input" event by passing msg in Console</span>
 </div>
 <!-- mouseover event  -->
 <div class="btn">
-    <h3 (mouseover)="getInput('over')" >-To Check the "mouseover" event by passing msg in Console when we mouseover it !!!</h3>
+  <h3 (mouseover)="getInput('over')">
+    -To Check the "mouseover" event by passing msg in Console when we mouseover
+    it !!!
+  </h3>
 </div>
 <!-- mouseleave event  -->
 <div class="btn">
-    <h3 (mouseleave)="getInput('leave')" >-To Check the "mouseleave" event by passing msg in Console when we mouseover it !!!</h3>
+  <h3 (mouseleave)="getInput('leave')">
+    -To Check the "mouseleave" event by passing msg in Console when we mouseover
+    it !!!
+  </h3>
 </div>
 <!-- making an input and showing its inputing value on the layout -->
 <div class="btn">
-    <h3 style="color:rgb(0, 0, 255);">---Making an input and showing its inputing value on the layout---</h3>
-    <input type="text" #box4 (input)="getInputReal(box4.value)" placeholder="Input Something">
-    <span>Input value is : {{displayValue}}</span>
+  <h3 style="color: rgb(0, 0, 255)">
+    ---Making an input and showing its inputing value on the layout---
+  </h3>
+  <input
+    type="text"
+    #box4
+    (input)="getInputReal(box4.value)"
+    placeholder="Input Something"
+  />
+  <span>Input value is : {{ displayValue }}</span>
 </div>
 <!-- making an input and showing its inputing value on the layout by clicking button -->
 <div class="btn">
-    <h3 style="color:rgb(0, 0, 255);">---Making an input and showing its inputing value on the layout by clicking button ---</h3>
-    <input type="text" #box5 placeholder="Input Something" name="username">
-    <button class="btn1" (click)="getInputReal1(box5.value)">Click Me</button>
-    <span>Input value is : {{displayValue2}}</span>
+  <h3 style="color: rgb(0, 0, 255)">
+    ---Making an input and showing its inputing value on the layout by clicking
+    button ---
+  </h3>
+  <input type="text" #box5 placeholder="Input Something" name="username" />
+  <button class="btn1" (click)="getInputReal1(box5.value)">Click Me</button>
+  <span>Input value is : {{ displayValue2 }}</span>
+</div>
+
+<!-- Counters (with +- functionality) -->
+<div class="counterbox">
+  <header><h2>COUNTER</h2></header>
+  <span>
+    <button (click)="counter('minus')">- -</button>
+    <span>Count: {{ count }}</span>
+    <button (click)="counter('add')">+ +</button>
+  </span>
+</div>
+<!--
+    STYLES IN ANGULAR
+    1. Inline Style -> to style any one element  
+    2. Component Style -> to style any component
+    3. Global Style -> to style globally in different different components
+-->
+
+<!-- PROPERTY BINDING-->
+
+<!-- it is used to chnage/update any property or attributes of any html element
+    p-binding also works with boolean values but interpolation doesn't
+    lets show this with an example !!! 
+-->
+<div class="PbindingEx">
+  <!-- by using interpolation -->
+  <input
+    type="text"
+    name="user-name"
+    value="{{ name }}"
+    disabled="{{ disable }}"
+  />
+  <!-- by using property binding -->
+  <input type="text" name="user-name" [value]="name" [disabled]="disable" />
+  <!-- So with this example it is clearly visible that disable(false) is only working in p-binding -->
+</div>
+
+<!-- DECISION CONTROL STRUCTURES  -->
+<!-- 1( if or if else condition) -->
+<div class="conditional">
+  <!-- for check the if else condition we had declared a show property in .ts file if show is true then it will processed if condition while if the value of show is false then if will processed the else condition -->
+  <span *ngIf="show; then ifCondition; else elseCondition"></span>
+  <ng-template #ifCondition>
+    <h2>If Condition is processed</h2>
+  </ng-template>
+  <ng-template #elseCondition>
+    <h2>Else Condition is processed</h2>
+  </ng-template>
+
+  <!-- PRACTICING MULTIPLE IFS by matching color with given color in property -->
+  <ng-template [ngIf]="color === 'blue'">
+    <h2 style="color: blue">This is blue color</h2>
+  </ng-template>
+  <ng-template [ngIf]="color === 'red'">
+    <h2 style="color: red">This is red color</h2>
+  </ng-template>
+  <ng-template [ngIf]="color === 'green'">
+    <h2 style="color: green">This is green color</h2>
+  </ng-template>
+  <ng-template [ngIf]="color === 'pink'">
+    <h2 style="color: pink">This is pink color</h2>
+  </ng-template>
+  <!-- SWITCH CONDITON - if we hv more then 3 conditions we should prefer switch condition-->
+  <div [ngSwitch]="color">
+    <h2 *ngSwitchCase="'red'" style="color: red">This is Switch Red</h2>
+    <h2 *ngSwitchCase="'blue'" style="color: blue">This is Switch Blue</h2>
+    <h2 *ngSwitchCase="'green'" style="color: green">This is Switch Green</h2>
+    <h2 *ngSwitchCase="'orange'" style="color: orange">
+      This is Switch Orange
+    </h2>
+    <h2 *ngSwitchCase="'pink'" style="color: pink">This is Switch Pink</h2>
+    <h2 *ngSwitchCase="'skyblue'" style="color: skyblue">
+      This is Switch Sky Blue
+    </h2>
+    <h2 *ngSwitchDefault>This is Switch ByDefault color</h2>
+  </div>
+</div>
+<!-- FOR LOOP -->
+<div class="loop">
+  <h3 *ngFor="let item of users">Name is : {{ item }}</h3>
+  <h3 *ngFor="let item of usersDetails"><pre>{{ item.name}}     {{ item.email }}     {{ item.phone }}</pre></h3>
+</div>
+<div class="nestedLoop">
+  <ul *ngFor="let user of usersDetails">
+    <li>Name is :{{user.name}} </li>
+    <li>Email is :{{user.email}} </li>
+    <li>Phone no. is :{{user.phone}} </li>
+    <li>Social Accounts</li>
+    <ul *ngFor="let accounts of user.socialAccount">
+        <li>{{accounts}}</li>
+    </ul>
+  </ul>  
 </div>
