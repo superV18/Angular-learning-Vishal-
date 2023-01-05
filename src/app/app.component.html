@@ -1,3 +1,7 @@
+<!-- making an header -->
+<div class="header">
+  <app-header> </app-header>
+</div>
 <!-- interpolation example -->
 <h1>vishal Garg {{ title }}</h1>
 <!-- V can add class to the interpolated element-->
@@ -85,10 +89,11 @@
     it !!!
   </h3>
 </div>
-<!-- making an input and showing its inputing value on the layout -->
+<!-- making an input and showing its inputing value on the layout By Event binding -->
 <div class="btn">
   <h3 style="color: rgb(0, 0, 255)">
-    ---Making an input and showing its inputing value on the layout---
+    ---Making an input and showing its inputing value on the layout By Event
+    binding---
   </h3>
   <input
     type="text"
@@ -114,7 +119,9 @@
   <header><h2>COUNTER</h2></header>
   <span>
     <button (click)="counter('minus')">- -</button>
-    <span>Count: {{ count }}</span>
+    <span
+      ><b>Count : {{ count }}</b></span
+    >
     <button (click)="counter('add')">+ +</button>
   </span>
 </div>
@@ -131,6 +138,7 @@
     p-binding also works with boolean values but interpolation doesn't
     lets show this with an example !!! 
 -->
+<u><h2>Use of property binding</h2></u>
 <div class="PbindingEx">
   <!-- by using interpolation -->
   <input
@@ -145,7 +153,7 @@
 </div>
 
 <!-- DECISION CONTROL STRUCTURES  -->
-<!-- 1( if or if else condition) -->
+<u><h2>If or if else condition</h2></u>
 <div class="conditional">
   <!-- for check the if else condition we had declared a show property in .ts file if show is true then it will processed if condition while if the value of show is false then if will processed the else condition -->
   <span *ngIf="show; then ifCondition; else elseCondition"></span>
@@ -157,6 +165,11 @@
   </ng-template>
 
   <!-- PRACTICING MULTIPLE IFS by matching color with given color in property -->
+  <u
+    ><h2>
+      PRACTICING MULTIPLE IFS by matching color with given color in property
+    </h2>
+  </u>
   <ng-template [ngIf]="color === 'blue'">
     <h2 style="color: blue">This is blue color</h2>
   </ng-template>
@@ -169,8 +182,15 @@
   <ng-template [ngIf]="color === 'pink'">
     <h2 style="color: pink">This is pink color</h2>
   </ng-template>
+
   <!-- SWITCH CONDITON - if we hv more then 3 conditions we should prefer switch condition-->
   <div [ngSwitch]="color">
+    <u
+      ><h2>
+        PRACTICING SWITCH CONDITON by matching color with given color in
+        property
+      </h2></u
+    >
     <h2 *ngSwitchCase="'red'" style="color: red">This is Switch Red</h2>
     <h2 *ngSwitchCase="'blue'" style="color: blue">This is Switch Blue</h2>
     <h2 *ngSwitchCase="'green'" style="color: green">This is Switch Green</h2>
@@ -184,19 +204,74 @@
     <h2 *ngSwitchDefault>This is Switch ByDefault color</h2>
   </div>
 </div>
+
 <!-- FOR LOOP -->
+<u><h2>USE OF FOR LOOP</h2></u>
 <div class="loop">
   <h3 *ngFor="let item of users">Name is : {{ item }}</h3>
-  <h3 *ngFor="let item of usersDetails"><pre>{{ item.name}}     {{ item.email }}     {{ item.phone }}</pre></h3>
+  <h3 *ngFor="let item of usersDetails">
+    <pre>{{ item.name }}     {{ item.email }}     {{ item.phone }}</pre>
+  </h3>
 </div>
+
+<!-- NESTED FOR LOOP -->
+<u><h2>USE OF NESTED FOR LOOP</h2> </u>
 <div class="nestedLoop">
   <ul *ngFor="let user of usersDetails">
-    <li>Name is :{{user.name}} </li>
-    <li>Email is :{{user.email}} </li>
-    <li>Phone no. is :{{user.phone}} </li>
+    <li>Name is :{{ user.name }}</li>
+    <li>Email is :{{ user.email }}</li>
+
+    <li>Phone no. is :{{ user.phone }}</li>
     <li>Social Accounts</li>
     <ul *ngFor="let accounts of user.socialAccount">
-        <li>{{accounts}}</li>
+      <li>{{ accounts }}</li>
     </ul>
-  </ul>  
+  </ul>
 </div>
+
+<!-- Style Binding-->
+<!-- to apply dynamic binding when any style property comes from .ts file -->
+<div class="styleBinding">
+  <u><h2>Style Binding</h2></u>
+  <h2 [style.color]="color" [style.backgroundColor]="bgColor">
+    This is colored by style binding
+  </h2>
+  <button (click)="updateColor()">Update Color</button>
+</div>
+
+<!-- MAKING A FORM IN ANGULAR-->
+<u><h2>FORM IN ANGULAR</h2></u>
+<div id="form1">
+  <form #basicForm="ngForm" (ngSubmit)="getFormdata(basicForm.value)">
+    <span>Name : </span>
+    <input type="text" ngModel name="User" placeholder="Enter User Name" />
+    <span>Email : </span>
+    <input type="email" ngModel name="Email" placeholder="Enter User Email" />
+    <span>Password : </span>
+    <input
+      type="password"
+      ngModel
+      name="password"
+      placeholder="Enter User Password"
+    />
+    <button>Register</button>
+  </form>
+
+  <!-- SHOWING THE INPUT DATA VALUES-->
+  <u><h2>SHOWING THE INPUT DATA VALUES</h2></u>
+  <ul>
+    <li>Name is :- {{ userData.User }}</li>
+    <li>Email is :- {{ userData.Email }}</li>
+    <li>Password is -: {{ userData.password }}</li>
+</ul>
+</div>
+<!-- TOGGLE ANY ELEMENT (HIDE & SHOW ON BUTTON CLICK)-->
+<div class="toggleElem">
+  <span>
+      <h2 *ngIf="display">Heading tag</h2>
+      <button (click)="toggleElement()">Click to Toggle</button>
+  </span>
+</div>
+<!-- MATIRIAL UI INSTALLED-->
+<u><h2>USING MATIRIAL UI</h2></u>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
